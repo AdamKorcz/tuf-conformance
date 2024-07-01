@@ -413,8 +413,9 @@ class RepositorySimulator():
             hashes, length = self._compute_hashes_and_length(Snapshot.type)
 
         new_ts = self.load_metadata(Timestamp.type)
+        snapshot_version = self.load_metadata(Snapshot.type).signed.version
         new_ts.signed.snapshot_meta = MetaFile(
-            self.load_metadata(Snapshot.type).signed.version,
+            snapshot_version,
             length,
             hashes
         )
@@ -432,8 +433,9 @@ class RepositorySimulator():
             hashes, length = self._compute_hashes_and_length(Snapshot.type)
 
         new_ts = self.load_metadata(Timestamp.type)
+        snapshot_version = self.load_metadata(Snapshot.type).signed.version
         new_ts.signed.snapshot_meta = MetaFile(
-            self.load_metadata(Snapshot.type).signed.version,
+            snapshot_version,
             length,
             hashes
         )
